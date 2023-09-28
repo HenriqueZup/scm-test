@@ -26,6 +26,16 @@ jobs:
       PYTHONIOENCODING: utf-8
       HTTP_ENABLE_DEBUG: false
     steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install Library's
+        run: npm ci
+        
       - name: Running ${{ inputs.workflow_name }}
         run: |
           secret_stk_login=$(echo '${{ inputs.secrets }}' | jq -cr '.cli_token')
