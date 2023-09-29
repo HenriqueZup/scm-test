@@ -33,8 +33,8 @@ jobs:
         with:
           node-version: '18'
       
-      - name: Install Library's
-        run: npm ci
+      - name: Install NodeJS
+        run: npm install
         
       - name: Running ${{ inputs.workflow_name }}
         run: |
