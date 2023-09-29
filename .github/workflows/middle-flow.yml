@@ -26,14 +26,11 @@ jobs:
       PYTHONIOENCODING: utf-8
       HTTP_ENABLE_DEBUG: false
     steps:
-      - name: Node.js with node_modules cache
-        uses: magnetikonline/action-node-modules-cache@0b4ad87d575ee27fac4196064d478a9de926cfe3
-        with:
-          node-version: '18'
-          package-lock-path: package-lock.json
+      - name: Yarn & Node install cache
+        uses: EgorDm/gha-yarn-node-cache@5e3a518810b21a8e0e1d236a3db83a18cfc1be9e
 
       - name: Install npm
-        run: npm install
+        run: npm ci
    
       - name: Running ${{ inputs.workflow_name }}
         run: |
