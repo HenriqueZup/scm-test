@@ -8,6 +8,7 @@ metadata:
   stack: react-website-template@1.0.0
 spec:
   type: app
+  app-id: 01HBGQFPGB21W9WQSZXWD2FQYM
   plugins:
     - name: technical-writers/react-website-template@1.0.0/doc-template-app@1.3.0
       alias: doc-template-app-1695999823744
