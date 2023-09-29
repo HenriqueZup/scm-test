@@ -1,0 +1,31 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: website-template-react
+  description: test template
+  starter: technical-writers/react-website-template@2.0.0/install-site-template
+  stack-version-id: 01HBH4TNCVS1BR69T1S5PJG1AM
+  stack: react-website-template@2.0.0
+spec:
+  type: app
+  plugins:
+    - name: technical-writers/react-website-template@2.0.0/doc-template-app@1.3.0
+      alias: doc-template-app-1696014257928
+      plugin-version-id: 01HBGPSJQ1Q3PN90720ET9XGZV
+      stack-version-id: 01HBH4TNCVS1BR69T1S5PJG1AM
+      type: app
+      inputs:
+        site: documentation-template-website
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-s3-conn
+            selected: aws-bucket-s3-conn
+            alias: website-buckets3
+      links:
+        generates: []
+  global-inputs:
+    site: documentation-template-website
+  global-computed-inputs: {}
+  repository: https://github.com/HenriqueZup/scm-test
