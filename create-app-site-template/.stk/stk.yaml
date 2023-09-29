@@ -1,0 +1,31 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: create-app-site-template
+  description: create app site
+  starter: technical-writers/react-website-template@1.0.0/install-site-template
+  stack-version-id: 01HBGQ91TRKHDQV3FPBX4JZ85S
+  stack: react-website-template@1.0.0
+spec:
+  type: app
+  plugins:
+    - name: technical-writers/react-website-template@1.0.0/doc-template-app@1.3.0
+      alias: doc-template-app-1695999823744
+      plugin-version-id: 01HBGPSJQ1Q3PN90720ET9XGZV
+      stack-version-id: 01HBGQ91TRKHDQV3FPBX4JZ85S
+      type: app
+      inputs:
+        site: create-my-fist-site
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-s3-conn
+            selected: aws-bucket-s3-conn
+            alias: website-buckets3
+      links:
+        generates: []
+  global-inputs:
+    site: create-my-fist-site
+  global-computed-inputs: {}
+  repository: https://github.com/HenriqueZup/scm-test
