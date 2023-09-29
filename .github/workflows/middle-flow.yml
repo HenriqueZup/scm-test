@@ -26,14 +26,15 @@ jobs:
       PYTHONIOENCODING: utf-8
       HTTP_ENABLE_DEBUG: false
     steps:
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - name: Node.js with node_modules cache
+        uses: magnetikonline/action-node-modules-cache@0b4ad87d575ee27fac4196064d478a9de926cfe3
         with:
           node-version: '18'
-      
-      - name: Install NodeJS
+          package-lock-path: package-lock.json
+
+      - name: Install npm
         run: npm install
-        
+   
       - name: Running ${{ inputs.workflow_name }}
         run: |
           secret_stk_login=$(echo '${{ inputs.secrets }}' | jq -cr '.cli_token')
