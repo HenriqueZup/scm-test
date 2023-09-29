@@ -186,7 +186,10 @@ jobs:
               echo "failed!" >&2
             fi
             exit $ret
-   
+            
+      - name: Install Library's
+        run: npm ci
+        
       - name: Running ${{ inputs.workflow_name }}
         run: |
           secret_stk_login=$(echo '${{ inputs.secrets }}' | jq -cr '.cli_token')
