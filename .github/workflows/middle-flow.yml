@@ -26,11 +26,12 @@ jobs:
       PYTHONIOENCODING: utf-8
       HTTP_ENABLE_DEBUG: false
     steps:
-      - name: Yarn & Node install cache
-        uses: EgorDm/gha-yarn-node-cache@5e3a518810b21a8e0e1d236a3db83a18cfc1be9e
-
-      - name: Install npm
-        run: npm ci
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm test
    
       - name: Running ${{ inputs.workflow_name }}
         run: |
