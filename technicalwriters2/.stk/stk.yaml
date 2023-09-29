@@ -1,0 +1,31 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: technicalwriters2
+  description: fsafsfsdfas
+  starter: technical-writers/static-site-generator@1.0.0/doc-template-install
+  stack-version-id: 01HBC74G972WHPR17A8T01GVM3
+  stack: static-site-generator@1.0.0
+spec:
+  type: app
+  plugins:
+    - name: technical-writers/static-site-generator@1.0.0/doc-template-app@1.0.0
+      alias: doc-template-app-1695960793216
+      plugin-version-id: 01HBC6X6JPGJA4B3Y9XG21R6D8
+      stack-version-id: 01HBC74G972WHPR17A8T01GVM3
+      type: app
+      inputs:
+        site: my-last-test
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-s3-conn
+            selected: aws-bucket-s3-conn
+            alias: website-buckets3
+      links:
+        generates: []
+  global-inputs:
+    site: my-last-test
+  global-computed-inputs: {}
+  repository: https://github.com/HenriqueZup/scm-test
