@@ -16,9 +16,16 @@ on:
         description: Workflow inputs (json)
         required: true
 jobs:
-  config_env:
-  name: Config NodeJS
-  steps:
+  run:
+    name: Run workflow ${{ github.event.inputs.workflow_name }}
+    runs-on: ubuntu-latest
+    env:
+      LANG: C.UTF-8
+      LANGUAGE: C.UTF-8
+      LC_ALL: C.UTF-8
+      PYTHONIOENCODING: utf-8
+      HTTP_ENABLE_DEBUG: false
+    steps:
       - uses: actions/checkout@v3
 
       - name: Setup Node
@@ -29,16 +36,6 @@ jobs:
       - name: Install NodeJS
         run: npm install
         
-  run:
-    name: Run workflow ${{ github.event.inputs.workflow_name }}
-    runs-on: ubuntu-latest
-    env:
-      LANG: C.UTF-8
-      LANGUAGE: C.UTF-8
-      LC_ALL: C.UTF-8
-      PYTHONIOENCODING: utf-8
-      HTTP_ENABLE_DEBUG: false
-    steps:        
       - name: Running ${{ inputs.workflow_name }}
         run: |
           secret_stk_login=$(echo '${{ inputs.secrets }}' | jq -cr '.cli_token')
