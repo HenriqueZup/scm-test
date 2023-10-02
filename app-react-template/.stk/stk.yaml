@@ -1,0 +1,31 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: app-react-template
+  description: create website with a react template
+  starter: technical-writers/react-website-template@2.2.0/install-site-template
+  stack-version-id: 01HBRPDNV6KGH9QFW84M00DJSW
+  stack: react-website-template@2.2.0
+spec:
+  type: app
+  plugins:
+    - name: technical-writers/react-website-template@2.2.0/doc-template-app@1.3.0
+      alias: doc-template-app-1696267299299
+      plugin-version-id: 01HBGPSJQ1Q3PN90720ET9XGZV
+      stack-version-id: 01HBRPDNV6KGH9QFW84M00DJSW
+      type: app
+      inputs:
+        site: my-website-react-app
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires:
+          - type: aws-s3-conn
+            selected: aws-bucket-s3-conn
+            alias: website-buckets3
+      links:
+        generates: []
+  global-inputs:
+    site: my-website-react-app
+  global-computed-inputs: {}
+  repository: https://github.com/HenriqueZup/scm-test
