@@ -1,0 +1,29 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: bucket-s3-henrique
+  description: teset de bucket s3
+  stack-version-id: 01HBC8YQRQG5XZADJ674PC5DJD
+  stack: infrastructure-aws-stack@1.0.0
+spec:
+  type: infra
+  plugins:
+    - name: technical-writers/infrastructure-aws-stack@1.0.0/infra-bucket-s3@1.0.0
+      alias: infra-bucket-s3-1696450886301
+      plugin-version-id: 01HBC704P1GTZ9GC5W8H4R3VFZ
+      stack-version-id: 01HBC8YQRQG5XZADJ674PC5DJD
+      type: infra
+      inputs:
+        name: bucket-s3-henrique-24099206h4424234
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-s3-conn
+            selected: henrique-s3-test-conn
+            alias: aws-s3-conn-270920231735
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/HenriqueZup/scm-test
