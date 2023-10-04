@@ -1,0 +1,28 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: technicalwriters-teste2
+  description: testesteset
+  starter: technical-writers/react-website-template@3.1.0/install-site-template
+  stack-version-id: 01HBS6PR97S0ECQDHBCJBRCQF6
+  stack: react-website-template@3.1.0
+spec:
+  type: app
+  app-id: 01HBXYGQPGZCMRR8VRW52S6EC8
+  plugins:
+    - name: technical-writers/react-website-template@3.1.0/doc-template-app@3.0.0
+      alias: doc-template-app-1696443409112
+      plugin-version-id: 01HBS6KK12C53KH5T5HJQ58XJG
+      stack-version-id: 01HBS6PR97S0ECQDHBCJBRCQF6
+      type: app
+      inputs:
+        site: Site-Henrique-teste
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/HenriqueZup/scm-test
