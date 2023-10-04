@@ -7,6 +7,7 @@ metadata:
   stack: infrastructure-aws-stack@1.0.0
 spec:
   type: infra
+  infra-id: 01HBY5SFAX457ASV05CRD2WKYG
   plugins:
     - name: technical-writers/infrastructure-aws-stack@1.0.0/infra-bucket-s3@1.0.0
       alias: infra-bucket-s3-1696450886301
