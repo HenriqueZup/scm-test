@@ -8,6 +8,7 @@ metadata:
   stack: static-site-generator@4.1.0
 spec:
   type: app
+  app-id: 01HDF3QSD5ZEK2W847K0Q5QZQ7
   plugins:
     - name: technical-writers/static-site-generator@4.1.0/doc-template-app@3.0.0
       alias: doc-template-app-1698093054903
