@@ -1,0 +1,29 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: create-bucket
+  description: myy infra
+  stack-version-id: 01HBC8YQRQG5XZADJ674PC5DJD
+  stack: infrastructure-aws-stack@1.0.0
+spec:
+  type: infra
+  plugins:
+    - name: technical-writers/infrastructure-aws-stack@1.0.0/infra-bucket-s3@1.0.0
+      alias: infra-bucket-s3-1698096524254
+      plugin-version-id: 01HBC704P1GTZ9GC5W8H4R3VFZ
+      stack-version-id: 01HBC8YQRQG5XZADJ674PC5DJD
+      type: infra
+      inputs:
+        name: my-bucket
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-s3-conn
+            selected: my-bcket alias
+            alias: aws-s3-conn-270920231735
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/HenriqueZup/scm-test
