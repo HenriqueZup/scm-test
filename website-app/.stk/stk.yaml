@@ -1,0 +1,27 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: website-app
+  description: test website app creation
+  starter: technical-writers/static-site-generator@4.1.0/install-site-template
+  stack-version-id: 01HBS6MGTV4FQMDCADENPX66V7
+  stack: static-site-generator@4.1.0
+spec:
+  type: app
+  plugins:
+    - name: technical-writers/static-site-generator@4.1.0/doc-template-app@3.0.0
+      alias: doc-template-app-1698093054903
+      plugin-version-id: 01HBS6KK12C53KH5T5HJQ58XJG
+      stack-version-id: 01HBS6MGTV4FQMDCADENPX66V7
+      type: app
+      inputs:
+        site: my-website-test
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/HenriqueZup/scm-test
